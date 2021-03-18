@@ -1,0 +1,85 @@
+{
+  "name": "feathers-mongoose",
+  "description": "A Feathers service adapter for the Mongoose ORM",
+  "version": "8.3.1",
+  "homepage": "https://github.com/feathersjs-ecosystem/feathers-mongoose",
+  "main": "lib/",
+  "types": "types",
+  "keywords": [
+    "feathers",
+    "feathers-plugin",
+    "REST",
+    "Socket.io",
+    "realtime",
+    "mongodb",
+    "mongo",
+    "mongoose",
+    "service"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/feathersjs-ecosystem/feathers-mongoose.git"
+  },
+  "author": {
+    "name": "Feathers contributors",
+    "email": "hello@feathersjs.com",
+    "url": "https://feathersjs.com"
+  },
+  "contributors": [
+    "Eric Kryski <e.kryski@gmail.com> (http://erickryski.com)",
+    "Glavin Wiechert <glavin.wiechert@gmail.com> (https://github.com/Glavin001)",
+    "Marshall Thompson <marshall@creativeideal.net> (https://github.com/marshallswain)"
+  ],
+  "bugs": {
+    "url": "https://github.com/feathersjs-ecosystem/feathers-mongoose/issues"
+  },
+  "engines": {
+    "node": ">= 6"
+  },
+  "scripts": {
+    "publish": "git push origin --tags && npm run changelog && git push origin",
+    "changelog": "github_changelog_generator && git add CHANGELOG.md && git commit -am \"Updating changelog\"",
+    "release:patch": "npm version patch && npm publish",
+    "release:minor": "npm version minor && npm publish",
+    "release:major": "npm version major && npm publish",
+    "mongodb": "run-rs -v 4.0.0",
+    "lint": "semistandard --fix",
+    "dtslint": "dtslint types",
+    "mocha": "mocha --opts mocha.opts",
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- --opts mocha.opts",
+    "test": "npm run lint && npm run dtslint && npm run coverage"
+  },
+  "semistandard": {
+    "env": [
+      "mocha"
+    ]
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "peerDependencies": {
+    "mongoose": "^5.8.7"
+  },
+  "dependencies": {
+    "@feathersjs/adapter-commons": "^4.4.3",
+    "@feathersjs/commons": "^4.4.3",
+    "@feathersjs/errors": "^4.4.3"
+  },
+  "devDependencies": {
+    "@feathersjs/adapter-tests": "^4.4.3",
+    "@feathersjs/express": "^4.4.3",
+    "@feathersjs/feathers": "^4.4.3",
+    "@feathersjs/socketio": "^4.4.3",
+    "@types/mongoose": "^5.5.41",
+    "chai": "^4.2.0",
+    "dtslint": "^3.0.0",
+    "istanbul": "^1.1.0-alpha.1",
+    "mocha": "^7.0.0",
+    "mongoose": "^5.4.0",
+    "run-rs": "^0.6.2",
+    "semistandard": "^14.2.0",
+    "sinon": "^9.0.0",
+    "sinon-chai": "^3.4.0"
+  }
+}
